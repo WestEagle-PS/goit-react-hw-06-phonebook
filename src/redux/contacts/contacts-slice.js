@@ -20,8 +20,10 @@ const contactsSlice = createSlice({
       },
     },
 
-    deleteContacts: (state, { payload }) => {
-      return state.filter(({ id }) => id !== payload);
+    deleteContacts: (state, action) => {
+      console.log('action: ', action);
+
+      return state.filter(({ id }) => id !== action.payload);
     },
   },
 });

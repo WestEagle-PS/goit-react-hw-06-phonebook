@@ -16,7 +16,6 @@ import css from './phone-book.module.scss';
 const PhoneBook = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
-  const filteredCOntacts = useSelector(getFilteredItems);
 
   const dispatch = useDispatch();
 
@@ -40,11 +39,6 @@ const PhoneBook = () => {
     return Boolean(dublicate);
   };
 
-  const onDeleteNumber = id => {
-    const action = deleteContacts(id);
-    dispatch(action);
-  };
-
   const handleFilterChange = e => {
     const { value } = e.target;
     const action = setFilter(value);
@@ -65,10 +59,7 @@ const PhoneBook = () => {
           name="filter"
           value={filter}
         />
-        <ContactList
-          contacts={filteredCOntacts}
-          onDeleteNumber={onDeleteNumber}
-        />
+        <ContactList />
       </PhoneBlock>
     </div>
   );
