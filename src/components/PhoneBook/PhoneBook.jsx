@@ -4,11 +4,10 @@ import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
 import {
   getContacts,
-  getFilteredItems,
 } from 'redux/contacts/contacts-selectors';
 import { getFilter } from 'redux/filter/filter-selectors';
 
-import { addContacts, deleteContacts } from 'redux/contacts/contacts-slice';
+import { addContacts } from 'redux/contacts/contacts-slice';
 import { setFilter } from 'redux/filter/filter-slice';
 
 import css from './phone-book.module.scss';
